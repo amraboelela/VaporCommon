@@ -43,6 +43,7 @@ public extension Request {
     var fromMobile: Bool {
         let mobileArray = ["iPhone", "iPad", "iPod", "midp", "ucweb", "windows ce", "windows mobile", "BlackBerry", "IEMobile", "Opera Mini", "Android"]
         var result = false
+        NSLog("fromMobile request: \(self)")
         mobileArray.forEach { token in
             if "\(self)".contains(token) {
                 result = true
