@@ -52,4 +52,15 @@ public extension Request {
         return result
     }
     
+    var fromTorBrowser: Bool {
+        let mobileArray = [".onion"]
+        var result = false
+        //NSLog("fromMobile request: \(self)")
+        mobileArray.forEach { token in
+            if "\(self)".contains(token) {
+                result = true
+            }
+        }
+        return result
+    }
 }
