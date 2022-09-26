@@ -25,7 +25,7 @@ public extension String {
                 options: .regularExpression)
         }
         message = message.replacingOccurrences(
-            of: "#[^ \\\\~!\\-@#$%^&*(){}:\";'?/>\\.<,|\\=`\\[\\]]+",
+            of: "#[^ \\\\~!\\-@#$%^&*(){}:\";'?/>\\.<,|\\=`\\[\\]\n\r]+",
             with: "<a href=/h/$0>$0</a>",
             options: .regularExpression)
         message = message.replacingOccurrences(
@@ -61,4 +61,5 @@ public extension String {
     func base64() -> String {
         return Data(self.utf8).base64EncodedString()
     }
+    
 }
