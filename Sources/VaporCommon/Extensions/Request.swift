@@ -41,11 +41,13 @@ public extension Request {
     }
     
     var fromMobile: Bool {
+        let reqString = "\(self)"
+        print("reqString: \(reqString)")
         let mobileArray = ["iPhone", "iPad", "iPod", "midp", "ucweb", "windows ce", "windows mobile", "BlackBerry", "IEMobile", "Opera Mini", "Android"]
         var result = false
-        NSLog("fromMobile request: \(self)")
+        //NSLog("fromMobile request: \(self)")
         mobileArray.forEach { token in
-            if "\(self)".contains(token) {
+            if reqString.contains(token) {
                 result = true
             }
         }
