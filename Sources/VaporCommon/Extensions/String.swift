@@ -32,12 +32,18 @@ public extension String {
             of: "<a href=/h/#",
             with: "<a href=/h/")
         message = message.replacingOccurrences(
+            of: "/@",
+            with: "/at")
+        message = message.replacingOccurrences(
             of: "@[a-zA-Z0-9_]+",
             with: "<a href=/u/$0>$0</a>",
             options: .regularExpression)
         message = message.replacingOccurrences(
             of: "<a href=/u/@",
             with: "<a href=/u/")
+        message = message.replacingOccurrences(
+            of: "/at",
+            with: "/@")
         message = message.replacingOccurrences(
             of: "\n",
             with: "<br>")
