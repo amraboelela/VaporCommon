@@ -23,13 +23,18 @@ class StringTests: XCTestCase {
     }
     
     func testHtmlMessage() {
-        let message = """
+        var message = """
 Twister News link in #darknet
 
 Note: you will need a Tor Browser to view it
 """
-        let htmlMessage = message.htmlMessage
+        var htmlMessage = message.htmlMessage
         print("htmlMessage: \(htmlMessage)")
         XCTAssertNotNil(htmlMessage.range(of: "#darknet</a>"))
+        
+        message = "https://www.tiktok.com/@abdelwahab_for_egypt/video/7292048385044122926"
+        htmlMessage = message.htmlMessage
+        print("htmlMessage: \(htmlMessage)")
+        XCTAssertNotNil(htmlMessage.range(of: "/@abdelwahab_for_egypt"))
     }
 }
