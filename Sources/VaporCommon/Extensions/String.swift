@@ -58,7 +58,7 @@ public extension String {
             result = self[wwwRange]
         }
         if let result = result {
-            print("result: \(result)")
+            //print("result: \(result)")
             return String(result)
         }
         return nil
