@@ -17,7 +17,7 @@ public extension Request {
             //print("sessionID, sessionID: \(sessionID)")
             return sessionID
         }
-        return "123"
+        return id
     }
     
     var cookieStrings: [String] {
